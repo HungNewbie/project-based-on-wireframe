@@ -1,3 +1,8 @@
+
+  
+
+let test = new TaskManager(0);
+console.log(test);
 const regEx = /^[A-Za-z\s]*$/;
 function validateTaskForm() {
     function validName() {
@@ -72,6 +77,7 @@ function validateTaskForm() {
         }
     }
     validAssign();
+    addAndDisplay();
 }
 
 function currentDate() {
@@ -86,3 +92,17 @@ function currentDate() {
 }
 currentDate(); //Calling the current date function
 
+
+
+
+
+const form = document.getElementById("form");
+form.addEventListener("submit",validateTaskForm)
+
+console.log(test.loadUserInputToScreen());
+function addAndDisplay() {
+    test.addNewTask(taskName.value, description.value, assign.value, dueDate.value, curStatus.value);
+    test.saveUserInput();
+    test.displayTask();
+    }
+ 
