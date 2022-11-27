@@ -78,7 +78,8 @@ class TaskManager {
   }
   
 }
-let taskOutput = localStorage.getItem("newTask")
+let taskOutput = localStorage.getItem("newTask");
+console.log(taskOutput);
 const test1 = newCardboard({'name': `${taskOutput.taskName}`,
     
 'description':`${taskOutput.description}`,
@@ -87,10 +88,6 @@ const test1 = newCardboard({'name': `${taskOutput.taskName}`,
 'status':`${taskOutput.curStatus}`,
 })
 
-
-test1.saveUserInput();
-test1.loadUserInputToScreen();
-test1.displayTask();
 
 
   
