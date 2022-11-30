@@ -25,79 +25,7 @@
         <a href="#new">Add Task</a>
     </nav>
 
-    <div class="big-container" id="task">
-        <h1>Task list</h1>
-        <h2>Current task:</h2>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4" >
-            <!-- First card h-100 goes here -->
-            <div class="col box1">
-                <div class="card h-100 bg-success">
-                    <div class="task-box1">
-                        <p>Name: Brainstroming
-                        <p>Description: Thinking how we should design the website.</p>
-                        <p>Assigned to: whatever name</p>
-                        <p>Due date: 28/10/2022</p>
-                        <p>Status: Done.</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <!-- First card h-100 goes here -->
-            <div class="col box2">
-                <div class="card h-100 bg-info">
-                    <div class="task-box2">
-                        <p>Name: Draw a wireframe
-                        <p>Description: Draw a wireframe based on our idea.</p>
-                        <p>Assigned to: whatever name</p>
-                        <p>Due date: 28/10/2022</p>
-                        <p>Status: Done.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- First card h-100 goes here -->
-            <div class="col box3">
-                <div class="card h-100 bg-primary">
-                    <div class="task-box3">
-                        <p>Name: Start coding using HTML
-                        <p>Description: Using Html to draw the skeletion of our website.</p>
-                        <p>Assigned to: whatever name</p>
-                        <p>Due date: 28/10/2022</p>
-                        <p>Status: In progress.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- First card h-100 goes here -->
-            <div class="col box4">
-                <div class="card h-100 bg-warning">
-                    <div class="task-box4">
-                        <p>Name: Using CSS to add style to our website
-                        <p>Description: Add css code to make the visual of our website look better..</p>
-                        <p>Assigned to: whatever name</p>
-                        <p>Due date: 28/10/2022</p>
-                        <p>Status: In progress.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- First card h-100 goes here -->
-            <div class="col box5">
-                <div class="card h-100 bg-danger">
-                    <div class="task-box5">
-                        <p>Name: Fixing bugs</p>
-                        <p>Description: Try to debug our website..</p>
-                        <p>Assigned to: whatever name</p>
-                        <p>Due date: 28/10/2022</p>
-                        <p>Status: To do.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="list-items"></div>
-        </div>
-    </div>
     <div class ="new-task" id="new">
         <h1>Add a new task</h1>
         <h5>To add another task, please fill the form below:</h5>
@@ -107,7 +35,6 @@
                 <label for="name" class="col-sm-2 col-form-label">Name: </label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Newbie">
-                      <!-- pattern="[a-zA-Z]+" minlength="2" --> 
                       <p id="valid"></p>
                 </div>
             </div>
@@ -115,9 +42,8 @@
             <div class="mb-3 row">
                 <label for="description" class="col-sm-2 col-form-label">Description: </label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" style="width: 70%"  id="taskDescription" rows="5"></textarea>
-                    <div class="valid-feedback">Great job!</div>
-                    <div class="invalid-feedback">Minimum of 15 characters is required.</div>
+                    <textarea class="form-control"  name="description" id="description" rows="5"></textarea>
+                    <p id="valid2"></p>
                 </div>
             </div> 
             <br>
@@ -141,29 +67,52 @@
                 <section class="drop-down">
                     <label for="status" class="col-sm-2 col-form-label">Status: </label>
                     <select name="status" id="status">
-                        <option value="to do">To do</option>
-                        <option value="progress">In progress</option>
-                        <option value="review">Review</option>
-                        <option value="done">Done</option>
+                        <option value="To Do">To do</option>
+                        <option value="In Progress">In progress</option>
+                        <option value="Review">Review</option>
+                        <option value="Done">Done</option>
                     </select>
                 </section>
             </div>
             <br>
             <div>
-               <button><input type="submit" value="Submit" id="btnSubmit" onclick="validateTaskForm(), newCardboard()"/></button>
+               <button><input type="submit" value="Submit" id="btnSubmit" /></button>
             </div>
         </form>
     </div>
     </div>
+    <div class="big-container" id="task">
+        <h1>Task list</h1>
+        <h2>Current task:</h2>      
+            <div id="list-items"></div>
+        </div>
+    </div>
                    <!--task description -->
-
+                   <div class="d-flex justify-content-center  bg-light mb-3 p-1" style="height: 100vw;" id="tasksList">
+                    <div class="col-md-3 text-center tasksList  mt-3">
+                      <span style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(206, 238, 222);" class=" pl-5 pr-5">To Do</span>
+                      <div class="col" id="todo"></div>
+                    </div>
+                    <div class="col-md-3 text-center tasksList  mt-3">
+                      <span style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(206, 238, 222);" class=" pl-5 pr-5">In Progress</span>
+                      <div class="col" id="inprog"></div>
+                    </div>
+                    <div class="col-md-3 text-center tasksList  mt-3">
+                      <span style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(206, 238, 222);" class=" pl-5 pr-5">Review</span>
+                      <div class="col" id="review"></div>
+                    </div>
+                    <div class="col-md-3 text-center tasksList  mt-3">
+                      <span style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(206, 238, 222);" class=" pl-5 pr-5">Done</span>
+                      <div class="col" id="done"></div>
+                    </div>
+                   </div>
 
 
     <footer>
         <p>Copyright 2022 task list. All right reserved</p>
     </footer>
-    <script type="module" src="./formValidate.js"></script>
-    <script type = "module" src="./test.js"></script>
+   <!-- <script  src="./test2.js"></script> -->
+    <script  src="./test3.js"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

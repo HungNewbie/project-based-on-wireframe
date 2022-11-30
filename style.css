@@ -80,7 +80,7 @@ footer {
     max-width: 600px;
 }
 
-.valid-feedback, .invalid-feedback, #valid, #valid1, #errorMsg {
+.valid-feedback, .invalid-feedback, #valid, #valid1, #valid2, #errorMsg {
     text-align: center;
     color: rgb(143, 38, 59);
 }
