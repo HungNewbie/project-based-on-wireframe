@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Schedular</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style1.css" />
+</head>
+
+<body>
+  <!-- Navigation bar -->
+  <div>
+    <nav>
+      <a href="https://hungnewbie.github.io/project-based-on-wireframe/">Home</a>
+      <a href="#task">Task list</a>
+      <a href="#form">Add Task</a>
+    </nav>
+    <header>
+      <h1>Group 3</h1>
+      <div id="date"></div>
+    </header>
+
+    <!-- Content header  -->
+    <div class="container m-auto">
+      <div class="row">
+        <div class="col-12 m-auto">
+          <h1>Add a new task</h1>
+          <h5>To add another task, please fill the form below:</h5>
+          <!-- Form -->
+          <form id="form">
+            <div class="modal-body m-auto">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label class="form-label">Name:</label>
+                    <input id="name" type="text" class="form-control" />
+                    <small id="error-name"></small>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label class="form-label">Description:</label>
+                    <textarea class="form-control" id="description" rows="3"></textarea>
+                    <small id="error-description"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label class="form-label">Assigned to:</label>
+                    <input id="assignedTo" type="text" class="form-control" />
+                    <small id="error-assignee"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label class="form-label" for="due date">Due Date:</label>
+                    <input type="date" id="duedate" name="due date" />
+                    <small id="error-date"></small>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-3">
+                    <label class="form-label" for="status">Status:</label>
+                    <select id="status" class="form-select m-3" aria-label="Default select example">
+                      <option value="0">Select status</option>
+                      <option value="To Do">To Do</option>
+                      <option value="In Progress">In Progress</option>
+                      <option value="Review">Review</option>
+                      <option value="Done">Done</option>
+                    </select>
+                    <small id="error-status"></small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" onclick="clearInput()">
+                Reset
+              </button>
+              <button id="submitBTN" type="submit" class="btn btn-outline-primary">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <div class="big-container" id="task">
+    <h1>Task list</h1>
+    <h2>Current task:</h2>
+    <div id="list-items"></div>
+  </div>
+  </div>
+
+
+  <div class="d-flex justify-content-center" style="height: 100vw;" id="tasksList">
+    <div class="col-md-3 text-center tasksList  mt-3">
+      <span
+        style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(169, 220, 233);"
+        class=" pl-5 pr-5">To Do</span>
+      <div class="col" id="todo"></div>
+    </div>
+    <div class="col-md-3 text-center tasksList  mt-3">
+      <span
+        style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(169, 220, 233);"
+        class=" pl-5 pr-5">In Progress</span>
+      <div class="col" id="inprog"></div>
+    </div>
+    <div class="col-md-3 text-center tasksList  mt-3">
+      <span
+        style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(169, 220, 233);"
+        class=" pl-5 pr-5">Review</span>
+      <div class="col" id="review"></div>
+    </div>
+    <div class="col-md-3 text-center tasksList  mt-3">
+      <span
+        style="font-size: 30px; border: 3px solid rgba(243, 143, 97, 0.774);  border-radius: 15px; background-color: rgb(169, 220, 233);"
+        class=" pl-5 pr-5">Done</span>
+      <div class="col" id="done"></div>
+    </div>
+  </div>
+
+
+  <!-- <script src="./resource/js/taskmanager.js"></script> -->
+  <script src="./test2.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+<footer>
+  <p>&copy; <script>document.write(new Date().getFullYear())</script> Task List. All right reserved.</p>
+</footer>
+
+</html>

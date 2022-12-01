@@ -1,6 +1,6 @@
-html {
+body {
     text-align: center;
-    color: red;
+    color: black;
     font-size: 16px;
 }
 
@@ -25,9 +25,18 @@ header h1 {
     margin: 0;
 }
 
-.big-container {
-    background-color: #cbdcdd;
+.container {
+    background-color: #CBDCDD;
     padding: 1rem;
+   
+    width: 100%;
+}
+
+
+
+.big-container {
+    background-color: #6d89a9;
+    padding: 2rem;
 }
 
 .big-container h2 {
@@ -35,29 +44,29 @@ header h1 {
     text-align: left;
 }
 
-.new-task {
+.tasksList {
     background-color: #6d89a9;
     padding: 2rem;
 }
 
-.new-task h5 {
-    margin-bottom: 1rem;
-    text-align: left;
-}
 
-.form {
-    text-align: left;
+#form {
+    text-align: center;
     font-weight: bold;
 }
 
-.submit {
-    text-align: center;
+.form-control {
+    margin: 0 auto; 
+    margin-bottom: 15px;
+    margin-top: 15px;
+    max-width: 600px;
 }
 
 footer {
     padding: 1rem;
     background-color: #b71313;
     color:aliceblue;
+    margin-top: 1rem;
 }
 
 @media only screen and (max-width: 350px)  {
@@ -73,14 +82,9 @@ footer {
     }
 }
 
-.form-control {
-    margin: 0 auto; 
-    margin-bottom: 15px;
-    margin-top: 15px;
-    max-width: 600px;
-}
 
-.valid-feedback, .invalid-feedback, #valid, #valid1, #valid2, #errorMsg {
+
+ #error-status, #error-date, #error-assignee, #error-description, #error-name {
     text-align: center;
     color: rgb(143, 38, 59);
 }
