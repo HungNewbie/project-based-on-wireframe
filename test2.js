@@ -269,8 +269,11 @@ let today =  new Date();
   validStatus();
 
    //Adding functions to submit button
+   if (document.getElementById("error-name").innerHTML === "" && document.getElementById('error-description').innerHTML === "" &&
+   document.getElementById('error-assignee').innerHTML === "" && document.getElementById('error-date').innerHTML === "" &&
+   document.getElementById('error-status').innerHTML === "") {
     toAddTasks();
-
+   }
 };
 
 //Event handler for submit button
